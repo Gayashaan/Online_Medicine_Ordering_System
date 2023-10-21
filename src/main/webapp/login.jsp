@@ -32,14 +32,14 @@
 				</div>
 			</td>
 
-			<td width="20%">
-				<div class="AlreadyAcc">
-					<a href="RegistrationForm.html">Does not have an account?</a> <a
-						href="RegistrationForm.html"><button class="RRB">Register</button></a>
-				</div>
-			</td>
-		</tr>
-	</table>
+            <td width="20%">
+                <div class="AlreadyAcc">
+                    <a href="Registration.jsp">Does not have an account?</a>
+                    <a href="Registration.jsp"><button class="RRB">Register</button></a>
+                </div>
+            </td>
+        </tr>
+    </table>
 
 	<div class="Line">
 		<!-- Just to Take An empty NavBar -->

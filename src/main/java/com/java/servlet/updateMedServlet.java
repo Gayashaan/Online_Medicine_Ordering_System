@@ -1,6 +1,7 @@
 package com.java.servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -26,11 +27,12 @@ public class updateMedServlet extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+    
+
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		//int id = Integer.parseInt(request.getParameter("id"));
 		String medCode = request.getParameter("medcode");
 		String medName = request.getParameter("fname");
 		String indication = request.getParameter("ind");

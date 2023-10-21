@@ -1,8 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@page import="java.util.ArrayList"%> 
+<%@page import="java.util.*"%> 
 <%@page import="com.java.model.Medicine"%> 
+<%@page import="projectpackage1.DBconnection"%>
+<%@page import="com.java.util.MedicineDBUtil"%>
+
+
+
+
+
+
+
+<%
+List<Medicine> medicines = MedicineDBUtil.getMedicineDeteials();
+%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,40 +72,37 @@
                                     <th>Manufacturer</th>
                                     <th>Operation</th>
                                 </tr>
-                                <c:forEach var="meds" items="${medDets}" >
+                                <%
+                               		if (!medicines.isEmpty()) {
+                    					for (Medicine m : medicines) {
+                                %>
                                 
-                                	<c:url value="updateMed.jsp" var="updateMed">
-                                		<c:param name="id" value= "${meds.id}"/>
-                                		<c:param name="code" value= "${meds.medCode}"/>
-                                		<c:param name="name" value= "${meds.medName}"/>
-                                		<c:param name="indi" value= "${meds.indication}"/>
-                                		<c:param name="qty" value= "${meds.qty}"/>
-                                		<c:param name="expDate" value= "${meds.expDate}"/>
-                                		<c:param name="price" value= "${meds.price}"/>
-                                		<c:param name="manuf" value= "${meds.manufacturer}"/>
-                                	</c:url>
-
-	                                <tr>
+                                <tr>
 			
-	                					<td>${meds.medCode}</td>
-	                					<td>${meds.medName}</td>
-	                					<td>${meds.indication}</td>
-	                					<td>${meds.qty}</td>
-	                					<td>${meds.expDate}</td>
-	                					<td>${meds.manufacturer}</td>
+	                					<td><%=m.getMedCode() %></td>
+	                					<td><%=m.getMedName() %></td>
+	                					<td><%=m.getIndication() %></td>
+	                					<td><%=m.getQty() %></td>
+	                					<td><%=m.getExpDate() %></td>
+	                					<td><%=m.getManufacturer() %></td>
+	                					
 	                					
 	                					<td> 
                                         	<div class="opBtns">
-                                            	<button id="vwBtn"><a href="${updateMed}">View</a></button>
-                                           		<button id="dlBtn" onclick="return confirmDelete()"><a href="deleteMedServlet?id=${meds.id}">Delete</a></button>
+                                            	<button id="vwBtn"><a href="updateMed.jsp?ID=<%= String.valueOf(m.getId()) %>">View</a></button>
+                                           		<button id="dlBtn" onclick="return confirmDelete()"><a href="deleteMed?id=<%= m.getId() %>">Delete</a></button>
                                             </div>
                                        </td>
 	                					
 	                					
 	                                </tr>
-                            	</c:forEach>
                                 
-                                
+                                <%
+										}
+									} else {
+										out.println("There is no proucts");
+									}
+								%>
 
                             </table>
 

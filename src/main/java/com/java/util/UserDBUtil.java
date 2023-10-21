@@ -1,12 +1,19 @@
 package com.java.util;
 
 import java.sql.Connection;
+
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
+import com.java.model.User;
 
 import projectpackage1.DBconnection;
 
@@ -82,6 +89,28 @@ public static boolean validate(String username, String password, String userType
 		
 		return isSuccess;
 		
+	}
+	
+	public static User getUser(String un) {
+		User user = new User();
+		
+
+		try {
+            String query = "select * from omos.customer where userName=?";
+            PreparedStatement pst = con.prepareStatement(query);
+            pst.setString(1, un);
+            rs = pst.executeQuery();
+            if(rs.next()){
+            	
+            	user.setId(rs.getInt(1));
+            	user.setUname(rs.getString(2));
+            	
+            }
+        } catch (SQLException e) {
+            System.out.print(e.getMessage());
+        }
+		
+		return user;
 	}
 	
 

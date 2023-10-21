@@ -11,6 +11,10 @@ public class Medicine {
 	private double price;
 	private String manufacturer;
 	
+	public Medicine() {
+		
+	}
+	
 	
 	public Medicine(int id, String medCode, String medName, String indication, int qty, String expDate, double price,
 			String manufacturer) {

@@ -101,16 +101,6 @@
 
 
 <servlet>
-        <servlet-name>viewMedServlet</servlet-name>
-        <servlet-class>com.java.servlet.viewMedServlet</servlet-class>
-</servlet>
-
-<servlet-mapping>
-        <servlet-name>viewMedServlet</servlet-name>
-        <url-pattern>/viewMedList</url-pattern>
-</servlet-mapping>
-
-<servlet>
         <servlet-name>updateMedServlet</servlet-name>
         <servlet-class>com.java.servlet.updateMedServlet</servlet-class>
 </servlet>
@@ -119,6 +109,7 @@
         <servlet-name>updateMedServlet</servlet-name>
         <url-pattern>/updateMed</url-pattern>
 </servlet-mapping>
+
 
 <servlet>
         <servlet-name>deleteMedServlet</servlet-name>

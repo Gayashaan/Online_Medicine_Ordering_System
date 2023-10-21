@@ -1,6 +1,36 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="java.util.*"%> 
+<%@page import="com.java.model.Medicine"%> 
+<%@page import="projectpackage1.DBconnection"%>
+<%@page import="com.java.util.MedicineDBUtil"%>
+<%
+	
+	List<Medicine> meds = MedicineDBUtil.getMedicine(Integer.parseInt(request.getParameter("ID")));
 
+	int medid = 0;
+	String code = null;
+	String name = null;
+	String indi = null;
+	int qty = 0;
+	String expDate =null;
+	double price = 0;
+	String manuf =null;
+	
+	for(Medicine m: meds){
+		medid = m.getId();
+		code = m.getMedCode();
+		name = m.getMedName();
+		indi = m.getIndication();
+		qty = m.getQty();
+		expDate = m.getExpDate();
+		price = m.getPrice();
+		manuf = m.getManufacturer();
+		
+	}
+
+%>
 
 <!DOCTYPE html>
 <html>
@@ -29,18 +59,6 @@
 </head>
 <body>
 
-	<%
-	
-		int id = Integer.parseInt(request.getParameter("id"));
-		String code = request.getParameter("code");
-		String name = request.getParameter("name");
-		String indi = request.getParameter("indi");
-		int qty = Integer.parseInt(request.getParameter("qty"));
-		String expDate = request.getParameter("expDate");
-		double price = Double.parseDouble(request.getParameter("price"));
-		String manuf = request.getParameter("manuf");
-	
-	%>
 	
 	
 	<div class="container">
@@ -79,7 +97,7 @@
                         
 
                             <div class="detBox">
-                                <p>First Name:<%=name%></p>
+                                <p>First Name:<%=medid %></p>
                             </div>
 
                             <div class="detBox">
@@ -114,7 +132,7 @@
                 
                 
                     <p>Update <?php echo $Name."'s"; ?> Account</p>
-                    <form method="POST" action="updateMed">
+                    <form method="post" action="updateMed">
                         <div class="namewrap">
                             <div class="fwrap">
                                 <label for="fname">Medicine Code</label><br>

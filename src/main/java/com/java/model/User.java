@@ -9,6 +9,10 @@ public class User {
 	private String phone;
 	private String pwd;
 	
+	public User() {
+		
+	}
+
 	public User(int id, String uname, String email, String fname, String lname, String phone, String pwd) {
 		//super();
 		this.id = id;
@@ -46,6 +50,33 @@ public class User {
 
 	public String getPwd() {
 		return pwd;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public void setUname(String uname) {
+		Uname = uname;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public void setFname(String fname) {
+		this.fname = fname;
+	}
+
+	public void setLname(String lname) {
+		this.lname = lname;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
 	}
 
 }
