@@ -1,6 +1,6 @@
 package com.java.model;
 
-public class ManagerOrder {
+public class ManagerOrder{
 	private int id;
 	private String managerID;
 	private String orderDate;
@@ -9,7 +9,6 @@ public class ManagerOrder {
 	private String orderStatus;
 	
 	public ManagerOrder(int id, String managerID, String orderDate, String itemAndqty, String itemDesc, String orderStatus) {
-		//super();
 		this.id = id;
 		this.managerID = managerID;
 		this.orderDate = orderDate;
@@ -41,7 +40,6 @@ public class ManagerOrder {
 	public String getOrderStatus() {
 		return orderStatus;
 	}
+	
 
-	
-	
 }

@@ -48,33 +48,4 @@ function checkDoB() {
 }
 
 
-/**function enableButton()
-{
-    var accept = document.getElementById("accept");
-    var subbtn = document.getElementById("subbtn");
-
-    if(accept.checked == true){
-        subbtn.disabled = false;
-    }
-
-    else{
-        subbtn.disabled = true;
-    }
-
-}
-
-function enableButton()
-{
-    var accept = document.getElementById("accept");
-    var subbtn = document.getElementById("subbtn");
-
-    if(accept.checked == true){
-        subbtn.disabled = false;
-    }
-
-    else{
-        subbtn.disabled = true;
-    }
-
-}**/
 

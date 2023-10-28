@@ -12,7 +12,6 @@ import projectpackage1.DBconnection;
 
 //for managing Manager Orders in a database
 public class ManagerOrderDBUtil {
-	//private static boolean isSuccess;
 	
 	//for DB connection
 	private static Connection con = null;
