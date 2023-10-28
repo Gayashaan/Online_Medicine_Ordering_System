@@ -13,19 +13,20 @@ function confirmDelete() {
 	}
 }
 
-function validateDate() {
-	var dateInput = document.getElementByCgetElementsByClassName("exp");
-	var submitButton = document.getElementById("submit");
+/*function validateDate() {
+    var dateInput = document.getElementsByClassName("exp")[0]; // Assuming "exp" is the class name for the date input.
+    var submitButton = document.getElementById("submit");
 
-	var dateValue = dateInput.value;
-	var datePattern = /^(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{4}$/;
+    var dateValue = dateInput.value;
+    var datePattern = /^(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{4}$/;
 
-	if (datePattern.test(dateValue)) {
-		submitButton.disabled = false; // Enable the submit button
-	} else {
-		submitButton.disabled = true; // Disable the submit button
-	}
-}
+    if (datePattern.test(dateValue)) {
+        submitButton.disabled = false; // Enable the submit button
+    } else {
+        submitButton.disabled = true; // Disable the submit button
+    }
+}*/
+
 
 
 

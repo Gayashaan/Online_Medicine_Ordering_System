@@ -145,7 +145,7 @@
                             <label for="pwd">Manufacturer</label><br>
                             <input type="text" name="manuf" id="pwd" placeholder="Manufacturer" required><br>                           
    
-                          	<input type="submit" value="Create" id="sbt" name="submit" disabled><br>
+                          	<input type="submit" value="Create" id="sbt" name="submit"><br>
                         </div>
                                   
                     </form>
